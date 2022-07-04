@@ -1,3 +1,3 @@
-export default function MyApp({ Component, pageProps }) {
+export default function Payday({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
