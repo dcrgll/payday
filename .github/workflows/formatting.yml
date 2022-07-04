@@ -1,0 +1,19 @@
+name: Code Formatting
+on: push
+jobs:
+  Prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: yarn
+      - name: Run Prettier
+        run: npx prettier --check "src/**/*.js"
+  ESLint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: yarn lint
