@@ -10,8 +10,9 @@
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:coverage:ci": "jest --coverage --ci",
-    "prettier": "prettier --check 'src/**/*.js'",
-    "prettier:fix": "prettier --write 'src/**/*.js'"
+    "prettier": "prettier --check 'src/**/*.js' 'tests/**/*.js'",
+    "prettier:fix": "prettier --write 'src/**/*.js' 'tests/**/*.js'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.2.0",
@@ -27,7 +28,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "husky": "^7.0.0"
   },
   "prettier": {
     "singleQuote": true,
