@@ -1,9 +1,5 @@
-import * as styles from './styles'
+import HomePageContent from '@/components/home_page_content'
 
 export default function Home() {
-  return (
-    <div css={styles.container}>
-      <h1>hello</h1>
-    </div>
-  )
+  return <HomePageContent />
 }
