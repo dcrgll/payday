@@ -9,6 +9,4 @@ it('renders a heading', () => {
   })
 
   expect(heading).toBeInTheDocument()
-
-  expect(container).toMatchSnapshot()
 })
