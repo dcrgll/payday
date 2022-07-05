@@ -4,12 +4,12 @@ import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 }
 
 function createFirebaseApp(config) {
@@ -23,7 +23,6 @@ function createFirebaseApp(config) {
 const firebaseApp = createFirebaseApp(firebaseConfig)
 const db = getFirestore(firebaseApp)
 const auth = getAuth(firebaseApp)
-const googleAuthProvider = new GoogleAuthProvider()
 const storage = getStorage(firebaseApp)
 const STATE_CHANGED = 'state_changed'
 
@@ -32,4 +31,4 @@ if (process.env.NODE_ENV === 'development') {
   connectFirestoreEmulator(db, 'localhost', 8080)
 }
 
-export { auth, db, storage, googleAuthProvider, STATE_CHANGED }
+export { auth, db, storage, STATE_CHANGED }
