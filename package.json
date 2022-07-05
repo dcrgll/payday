@@ -12,7 +12,10 @@
     "test:coverage:ci": "jest --coverage --ci",
     "prettier": "prettier --check 'src/**/*.js' 'tests/**/*.js'",
     "prettier:fix": "prettier --write 'src/**/*.js' 'tests/**/*.js'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "db:up": "firebase emulators:start",
+    "db:seed": "node ./config/firebase/seed.js",
+    "db:clear": "curl -v -X DELETE 'http://localhost:8080/emulator/v1/projects/payday-b5fa1/databases/(default)/documents'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -21,7 +24,9 @@
     "firebase-admin": "^11.0.0",
     "next": "12.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-firebaseui": "^6.0.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.9.2",
